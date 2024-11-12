@@ -6,8 +6,8 @@
             <img src="../../../public/adminlte/dist/img/AYU_Logo_EN.png" alt="AdminLTE Logo"
                 class="brand-image img-circle elevation-3" style="opacity: .8">
             <div>
-                <span class="brand-text font-weight-light fontSize" v-if="userData.user.lang_code == 'kz'">ECommerce</span>
-                <span class="brand-text font-weight-light fontSize" v-else>ECommerce</span>
+                <span class="brand-text font-weight-light fontSize" v-if="userData.user.lang_code == 'kz'">Graduations</span>
+                <span class="brand-text font-weight-light fontSize" v-else>Graduations</span>
             </div>
         </a>
 
@@ -138,6 +138,13 @@ export default {
                     route_name: "admin.users.index",
                     menu_active: ["admin.users"],
                     role: this.allRoles,
+                },
+                {
+                    name: this.userData.user.lang_code == 'kz' ? "Түлектер" : "Graduations",
+                    font: "fa-cogs",
+                    route_name: "admin.graduates.index",
+                    menu_active: ["admin.graduates"],
+                    role: ['admin'],
                 },
                 {
                     name: this.userData.user.lang_code == 'kz' ? "Логтар" : "Loglar",

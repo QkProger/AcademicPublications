@@ -7,11 +7,11 @@
                 <div class="card no-select">
                     <div class="card-header d-flex align-items-center justify-content-between bg-white">
                         <div id="kz-title" class="d-block w-100 text-center">
-                            <h2>Сенат Ақпараттық жүйесі</h2>
+                            <h2>Түлектер</h2>
                             <h6 class="fw-normal">Ахмет Ясауи университеті</h6>
                         </div>
                         <div id="tr-title" class="d-block w-100 text-center d-none">
-                            <h2>Senato Bilgi Sistemi</h2>
+                            <h2>Graduations</h2>
                             <h6 class="fw-normal">Ahmet Yesevi Üniversitesi</h6>
                         </div>
                         <div class="login__logo_block text-end ms-lg-3">

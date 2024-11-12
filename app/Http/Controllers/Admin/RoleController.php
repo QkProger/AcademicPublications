@@ -29,12 +29,11 @@ class RoleController extends Controller
     {
         Role::create([
             'name' => $request->name,
-            'tr_name' => $request->tr_name
         ]);
         if (Log::log_status()) {
             Log::create([
                 'name' => $request->name . ' жаңа рөлін қосты ',
-                'tr_name' => $request->tr_name . ' yeni bir rol ekledi ',
+                'tr_name' => $request->name . ' yeni bir rol ekledi ',
                 'type' => 2,
                 'user_id' => auth()->guard('web')->id(),
             ]);
@@ -52,15 +51,13 @@ class RoleController extends Controller
     public function update(Request $request, Role $role)
     {
         $current_name = $role->name;
-        $current_tr_name = $role->tr_name;
         $role->update([
             'name' => $request->name,
-            'tr_name' => $request->tr_name
         ]);
         if (Log::log_status()) {
             Log::create([
                 'name' => $current_name . ' рөлінің атын ' . $request->name . '-ға ауыстырды',
-                'tr_name' => $current_tr_name . ' rol adını ' . $request->tr_name . ' olarak değiştirdi',
+                'tr_name' => $current_name . ' rol adını ' . $request->name . ' olarak değiştirdi',
                 'type' => 3,
                 'user_id' => auth()->guard('web')->id(),
             ]);
@@ -75,7 +72,7 @@ class RoleController extends Controller
         if (Log::log_status()) {
             Log::create([
                 'name' => $role->name . ' рөлін жойды',
-                'tr_name' => $role->tr_name . ' rolünü kaldırdı',
+                'tr_name' => $role->name . ' rolünü kaldırdı',
                 'type' => 4,
                 'user_id' => auth()->guard('web')->id(),
             ]);
