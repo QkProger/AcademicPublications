@@ -5,15 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Graduate extends Model
+class CenterNationality extends Model
 {
     use HasFactory;
     protected $guarded = [];
     public $timestamps = false;
-    protected $table = 'graduates';
-
-    public function studyForm()
-    {
-        return $this->belongsTo(StudyForm::class, 'studyFormId', 'id');
-    }
+    protected $table = 'center_nationality';
 }
