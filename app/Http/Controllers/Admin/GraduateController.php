@@ -58,7 +58,7 @@ class GraduateController extends Controller
         $icdepartments = IcDepartment::get();
         $center_nationalities = CenterNationality::get();
         $employmentreasons = EmploymentReason::get();
-        
+
         return Inertia::render('Admin/Graduate/Edit', [
             'graduate' => $graduate,
             'studyForms' => $studyForms,
@@ -76,13 +76,57 @@ class GraduateController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $graduate = Graduate::find($id);
         $graduate->update([
             'firstName' => $request->firstName,
-            'patronymic' => $request->patronymic,
             'lastName' => $request->lastName,
+            'patronymic' => $request->patronymic,
+            'birthDate' => $request->birthDate,
+            'iinPlt' => $request->iinPlt,
+            'sexId' => $request->sexId,
+            'studyFormId' => $request->studyFormId,
+            'paymentFormId' => $request->paymentFormId,
+            'studyLanguageId' => $request->studyLanguageId,
+            'professionId' => $request->professionId,
+            'hasJob' => $request->hasJob,
+            'jobPlace' => $request->jobPlace,
+            'gpa' => $request->gpa,
+            'startOrderNumber' => $request->startOrderNumber,
+            'finishOrderNumber' => $request->finishOrderNumber,
+            'finishDiplomSeries' => $request->finishDiplomSeries,
+            'finishDocDate' => $request->finishDocDate,
+            'doctorDefended' => $request->doctorDefended,
+            'degreeId' => $request->degreeId,
+            'startDate' => $request->startDate,
+            'finishOrderDate' => $request->finishOrderDate,
+            'finishDiplomNumber' => $request->finishDiplomNumber,
+            'centerProfessionCode' => $request->centerProfessionCode,
+            'oldUniversityName' => $request->oldUniversityName,
+            'phone' => $request->phone,
+            'mobilePhone' => $request->mobilePhone,
+            'sitizenshipId' => $request->sitizenshipId,
+            'firstNameEn' => $request->firstNameEn,
+            'lastNameEn' => $request->lastNameEn,
+            'patronymicEn' => $request->patronymicEn,
+            'organizationType' => $request->organizationType,
+            'protocolDate' => $request->protocolDate,
+            'protocolNumber' => $request->protocolNumber,
+            'regDiplomNumber' => $request->regDiplomNumber,
+            'studentId' => $request->studentId,
+            'icNumber' => $request->icNumber,
+            'icDate' => $request->icDate,
+            'icDepartment' => $request->icDepartment,
+            'nationId' => $request->nationId,
+            'entCertDatePrint' => $request->entCertDatePrint,
+            'certificate' => $request->certificate,
+            'rating' => $request->rating,
+            'education' => $request->education,
+            'jobPlaceTypeId' => $request->jobPlaceTypeId,
+            'employmentReasonId' => $request->employmentReasonId,
         ]);
+
         return redirect()->route('admin.graduates.index')->withSuccess("Сәтті сақталды!");
     }
 }

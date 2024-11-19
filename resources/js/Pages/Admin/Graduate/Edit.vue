@@ -1,15 +1,13 @@
 <template>
 
     <head>
-        <title v-if="userData.lang_code == 'kz'">Админ панель | Рөлді өзгерту</title>
-        <title v-else>Yönetici paneli | Rol adını değiştir</title>
+        <title v-if="userData.lang_code == 'kz'">Админ панель | Түлек ақпаратын өзгерту</title>
+        <title v-else>Админ панель | Түлек ақпаратын өзгерту</title>
     </head>
     <AdminLayout>
         <template #breadcrumbs>
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0" v-if="userData.lang_code == 'kz'">Рөл атын өзгерту</h1>
-                    <h1 class="m-0" v-else>Rol adını değiştir</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -22,18 +20,18 @@
                         <li class="breadcrumb-item">
                             <a :href="route('admin.roles.index')" v-if="userData.lang_code == 'kz'">
                                 <i class="fas fa-dashboard"></i>
-                                Рөлдер тізімі
+                                Түлектер тізімі
                             </a>
                             <a :href="route('admin.roles.index')" v-else>
                                 <i class="fas fa-dashboard"></i>
-                                Rollerin listesi
+                                Түлектер тізімі
                             </a>
                         </li>
                         <li class="breadcrumb-item active" v-if="userData.lang_code == 'kz'">
-                            Рөл атын өзгерту
+                            Түлек ақпаратын өзгерту
                         </li>
                         <li class="breadcrumb-item active" v-else>
-                            Rol adını değiştir
+                            Түлек ақпаратын өзгерту
                         </li>
                     </ol>
                 </div>
@@ -296,7 +294,7 @@ export default {
         submit() {
             this.$inertia.put(
                 route("admin.graduates.update", this.graduate.id),
-                this.role,
+                this.graduate,
                 {
                     onError: () => console.log("An error has occurred"),
                     onSuccess: () =>
