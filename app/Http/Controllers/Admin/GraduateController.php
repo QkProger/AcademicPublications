@@ -7,6 +7,7 @@ use App\Models\CenterCountry;
 use App\Models\CenterNationality;
 use App\Models\CenterProfession;
 use App\Models\Degree;
+use App\Models\EmploymentReason;
 use App\Models\Graduate;
 use App\Models\IcDepartment;
 use App\Models\JobplaceType;
@@ -17,6 +18,7 @@ use App\Models\StudyForm;
 use App\Models\StudyLanguage;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use PhpOffice\PhpWord\Writer\Word2007\Part\Rels;
 
 class GraduateController extends Controller
 {
@@ -55,6 +57,7 @@ class GraduateController extends Controller
         $organizationtypes = OrganizationType::get();
         $icdepartments = IcDepartment::get();
         $center_nationalities = CenterNationality::get();
+        $employmentreasons = EmploymentReason::get();
         $graduate->load([
             'studyForm',
             'paymentForm',
@@ -69,7 +72,6 @@ class GraduateController extends Controller
             'centerNationality',
         ]);
         
-
         return Inertia::render('Admin/Graduate/Edit', [
             'graduate' => $graduate,
             'studyForms' => $studyForms,
@@ -83,6 +85,17 @@ class GraduateController extends Controller
             'organizationtypes' => $organizationtypes,
             'icdepartments' => $icdepartments,
             'center_nationalities' => $center_nationalities,
+            'employmentreasons' => $employmentreasons,
         ]);
+    }
+
+    public function update(Request $request, $id) {
+        $graduate = Graduate::find($id);
+        $graduate->update([
+            'firstName' => $request->firstName,
+            'patronymic' => $request->patronymic,
+            'lastName' => $request->lastName,
+        ]);
+        return redirect()->route('admin.graduates.index')->withSuccess("Сәтті сақталды!");
     }
 }
