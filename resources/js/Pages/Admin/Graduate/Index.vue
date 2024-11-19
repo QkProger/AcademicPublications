@@ -85,7 +85,7 @@
                                 </thead>
                                 <tbody>
                                     <tr class="odd" v-for="graduate in graduates.data" :key="'graduate' + graduate.id">
-                                        <td>{{ graduate }}</td>
+                                        <td>{{ graduate.id }}</td>
                                         <td>{{ graduate.iinPlt }}</td>
                                         <td>{{ graduate.lastName }}</td>
                                         <td>{{ graduate.firstName }}</td>
