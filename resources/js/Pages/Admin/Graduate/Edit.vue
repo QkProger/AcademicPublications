@@ -224,8 +224,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Ұлты</label>
-                            <select class="form-control" v-model="graduate.nationId">
-                                <option :value="graduate.icDepartment" >{{ graduate.icDepartment }}</option>
+                            <select class="form-control" v-model="graduate.nationId">n>
                                 <option :value="center_nationalitie.id" v-for="center_nationalitie in center_nationalities">{{ center_nationalitie.nameKz }}</option>
                             </select>
                         </div>
@@ -253,7 +252,51 @@
                         </div>
                         <div class="form-group">
                             <label for="">Жұмысқа орналаспау себебі</label>
-                            <input type="text" class="form-control" v-model="graduate.employmentReasonId" name="employmentReasonId" />
+                            <select class="form-control" v-model="graduate.employmentReasonId">
+                                <option :value="employmentreason.id" v-for="employmentreason in employmentreasons">{{ employmentreason.nameKz }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="isHonoursDiploma">Үздік диплом</label>
+                            <select class="form-control" v-model="graduate.isHonoursDiploma" name="isHonoursDiploma">
+                                <option value="" disabled selected>Таңдаңыз</option>
+                                <option value="0">Ия</option> 
+                                <option value="1">Жоқ</option> 
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="iinGivedByGovernment">ЖСН мемлекеттік органмен беріледі</label>
+                            <select class="form-control" v-model="graduate.iinGivedByGovernment" name="iinGivedByGovernment">
+                                <option value="" disabled selected>Таңдаңыз</option>
+                                <option value="0">Ия</option> 
+                                <option value="1">Жоқ</option> 
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Туған қаласы</label>
+                            <input type="text" class="form-control" v-model="graduate.birthPlace" name="birthPlace" />
+                        </div>
+                        <div class="form-group">
+                            <label for="diplomDuplicateGiven">Диплом көшірмесі берілді</label>
+                            <select class="form-control" v-model="graduate.diplomDuplicateGiven" name="diplomDuplicateGiven">
+                                <option value="" disabled selected>Таңдаңыз</option>
+                                <option value="1">Ия</option> 
+                                <option value="0">Жоқ</option> 
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Диплом көшірмесінің сериясы мен номері</label>
+                            <input type="text" class="form-control" v-model="graduate.diplomDuplicateSeriesNumber" name="diplomDuplicateSeriesNumber" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Диплом көшірмесінің тіркеу номері</label>
+                            <input type="text" class="form-control" v-model="graduate.diplomDuplicateRegNumber" name="diplomDuplicateRegNumber" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Құжат берген Мекеме</label>
+                            <select class="form-control" v-model="graduate.icDepartmentId">
+                                <option :value="icdepartment.id" v-for="icdepartment in icdepartments">{{ icdepartment.nameKz }}</option>
+                            </select>
                         </div>
                     </div>
                     <div class="card-footer">
@@ -283,7 +326,7 @@ export default {
         ValidationError,
         Head
     },
-    props: ['jobplacetypes','center_nationalities','icdepartments',"graduate",'studyForms','paymentforms','studylanguages',"professions",'degrees','centerprofessions','centercountries','organizationtypes'],
+    props: ['employmentreasons','jobplacetypes','center_nationalities','icdepartments',"graduate",'studyForms','paymentforms','studylanguages',"professions",'degrees','centerprofessions','centercountries','organizationtypes'],
     created() {
         this.$store.dispatch('fetchUser');
     },
