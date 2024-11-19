@@ -28,7 +28,7 @@ class Graduate extends Model
 
     public function profession()
     {
-        return $this->belongsTo(Profession::class, 'professionId', 'id');
+        return $this->belongsTo(Profession::class, 'professionId', 'professionId');
     }
 
     public function jobplaceType()
@@ -38,7 +38,7 @@ class Graduate extends Model
 
     public function degree()
     {
-        return $this->belongsTo(Degree::class, 'degreeId', 'id');
+        return $this->belongsTo(Degree::class, 'degreeId', 'degreeId');
     }
 
     public function centerProfession()
