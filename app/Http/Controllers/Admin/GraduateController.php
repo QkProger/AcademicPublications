@@ -58,19 +58,6 @@ class GraduateController extends Controller
         $icdepartments = IcDepartment::get();
         $center_nationalities = CenterNationality::get();
         $employmentreasons = EmploymentReason::get();
-        $graduate->load([
-            'studyForm',
-            'paymentForm',
-            'studyLanguage',
-            'profession',
-            'jobplaceType',
-            'degree',
-            'centerProfession',
-            'centerCountry',
-            'organizationType',
-            'icDepartment',
-            'centerNationality',
-        ]);
         
         return Inertia::render('Admin/Graduate/Edit', [
             'graduate' => $graduate,
