@@ -51,7 +51,7 @@
       5 => 'Cumartesi',
       6 => 'Pazar',
     ),
-    'name' => 'ECommerce',
+    'name' => 'graduate',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://127.0.0.1',
@@ -289,7 +289,7 @@
         'driver' => 'octane',
       ),
     ),
-    'prefix' => 'ecommerce_cache_',
+    'prefix' => 'graduate_cache_',
   ),
   'cors' => 
   array (
@@ -388,7 +388,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'ecommerce_database_',
+        'prefix' => 'graduate_database_',
       ),
       'default' => 
       array (
@@ -637,7 +637,7 @@
     'from' => 
     array (
       'address' => 'daribekayeva@gmail.com',
-      'name' => 'ECommerce',
+      'name' => 'graduate',
     ),
     'markdown' => 
     array (
@@ -759,7 +759,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'ecommerce_session',
+    'cookie' => 'graduate_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,

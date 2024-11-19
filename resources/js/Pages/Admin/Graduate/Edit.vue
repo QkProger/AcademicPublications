@@ -44,10 +44,9 @@
                 <form method="post" @submit.prevent="submit">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="" v-if="userData.lang_code == 'kz'">Аты</label>
-                            <label for="" v-else>Adı</label>
-                            <input type="text" class="form-control" v-model="role.name" name="name" />
-                            <validation-error :field="'name'" />
+                            <label for="" >Аты</label>
+                            <input type="text" class="form-control" v-model="graduate.firstName" name="firstName" />
+                            <validation-error :field="'firstName'" />
                         </div>
                     </div>
                     <div class="card-footer">
@@ -77,7 +76,7 @@ export default {
         ValidationError,
         Head
     },
-    props: ["role"],
+    props: ["graduate"],
     created() {
         this.$store.dispatch('fetchUser');
     },
@@ -89,7 +88,7 @@ export default {
     methods: {
         submit() {
             this.$inertia.put(
-                route("admin.roles.update", this.role.id),
+                route("admin.graduates.update", this.graduate.id),
                 this.role,
                 {
                     onError: () => console.log("An error has occurred"),
