@@ -5,10 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JobplaceType extends Model
+class Music extends Model
 {
     use HasFactory;
+    protected $table = 'musics';
     protected $guarded = [];
-    public $timestamps = false;
-    protected $table = 'jobplacetype';
+    public $timestamps=false;
+
+    public function album() {
+        return $this->belongsTo(Album::class);
+    }
 }

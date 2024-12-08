@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Auth\AdminLoginRequest;
 use App\Models\Log;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserRole;
@@ -72,4 +73,31 @@ class AdminAuthController extends Controller
             'userRoles' => $userRoles,
         ]);
     }
+
+    public function register(Request $request) {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email|max:255',
+            'password' => 'required|string|confirmed', // "confirmed" будет проверять, что поле "password" и "password_confirmation" совпадают
+        ]);
+    
+        // Создание нового пользователя
+        $user = User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => Hash('sha1', $request->password),
+            'real_password' => $request->password,
+            'is_active' => 1,
+        ]);
+        $role_id = Role::where('name', 'user')->first()->id;
+        UserRole::create([
+            'user_id' => $user->id,
+            'role_id' => $role_id,
+        ]);
+    
+        auth()->login($user);
+    
+        return redirect()->route('main')->with('success', 'Вы успешно зарегистрированы!');
+    }
+    
 }

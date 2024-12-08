@@ -1,20 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\BannerController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ConverterController;
-use App\Http\Controllers\Admin\GraduateController;
+use App\Http\Controllers\Admin\AlbumController;
 use App\Http\Controllers\Admin\LogController;
-use App\Http\Controllers\Admin\MeetingController;
-use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\MusicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\RoleController;
-use App\Http\Controllers\Admin\SolutionController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\Test\TestLanguageController;
-use App\Http\Controllers\Admin\Test\TestSubjectController;
-use App\Http\Controllers\Admin\Test\TestQuestionController;
-use App\Http\Controllers\Admin\Test\FullTestController;
 use Inertia\Inertia;
 
 /*
@@ -39,8 +30,9 @@ Route::middleware('checkUserRole:admin')->group(function () {
 
 Route::middleware('checkUserRole:admin,moderator')->group(function () {
     Route::resource('user', UserController::class)->except(['show'])->names('users');
-    Route::resource('graduate', GraduateController::class)->only(['index', 'edit', 'update'])->names('graduates');
     Route::resource('logs', LogController::class)->only(['index'])->names('logs');
+    Route::resource('musics', MusicController::class)->except(['show'])->names('musics');
+    Route::resource('albums', AlbumController::class)->except(['show'])->names('albums');
 
     Route::put('/user/changeLangCode/{id}', [UserController::class, 'changeLangCode'])->name('users.changeLangCode');
 

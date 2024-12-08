@@ -12,7 +12,8 @@ class CheckUserRole
     {
         // Проверяем, есть ли авторизованный пользователь
         if (!auth()->check()) {
-            return redirect()->route('login');
+            // return redirect()->route('adminLoginShow');
+            return redirect()->route('register');
         }
 
         // Получаем роли текущего пользователя

@@ -13,7 +13,7 @@
         </ul>
 
         <!-- Right navbar links -->
-        <ul class="navbar-nav ml-auto">
+        <!-- <ul class="navbar-nav ml-auto">
             <li class="nav-item text-bold mr-2 c-p" @click="changeLangCode('kz')"
                 :style="{ color: userData.lang_code == 'kz' ? 'red' : '' }">
                 KZ
@@ -22,7 +22,7 @@
                 :style="{ color: userData.lang_code == 'tr' ? 'red' : '' }">
                 TR
             </li>
-        </ul>
+        </ul> -->
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
