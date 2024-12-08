@@ -43,7 +43,7 @@ class AdminAuthController extends Controller
                 'user_id' => auth()->guard('web')->id(),
             ]);
         }
-        return redirect()->route('admin.index');
+        return redirect()->route('main');
     }
 
     public function logout()

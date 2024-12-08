@@ -45,7 +45,7 @@ Route::get('/user', [AdminAuthController::class, 'getUser'])->name('user');
 // Route::post('/deleteMyAlbum', [MainController::class, 'deleteMyAlbum'])->name('deleteMyAlbum');
 
 
-Route::middleware('checkUserRole:user')->group(function () {
+Route::middleware('checkUserRole:admin,user')->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('main');
     Route::post('/saveTrack', [MainController::class, 'saveTrack'])->name('saveTrack');
     Route::post('/deleteMyTrack', [MainController::class, 'deleteMyTrack'])->name('deleteMyTrack');

@@ -140,43 +140,13 @@ export default {
         filteredRoles() {
             let filtered = this.roles;
 
-            if (this.exist1 === 1 && this.exist2 === 1) {
-                filtered = filtered.filter(role => role.id !== 3 && role.id !== 4);
-            } else {
-                if (this.exist1 === 1) {
-                    filtered = filtered.filter(role => role.id !== 3);
-                }
-                if (this.exist2 === 1) {
-                    filtered = filtered.filter(role => role.id !== 4);
-                }
-            }
-
             return filtered;
         },
-        // filteredRoles() {
-        //     let filtered = this.roles;
-
-        //     if (this.exist1 === 1 && this.exist2 === 1) {
-        //         filtered = filtered.filter(role => role.id !== 3 && role.id !== 4);
-        //     } else {
-        //         if (this.exist1 === 1 || this.userHasOneOfMainRoles === 1) {
-        //             filtered = filtered.filter(role => role.id !== 3);
-        //         }
-        //         if (this.exist2 === 1 || this.userHasOneOfMainRoles === 1) {
-        //             filtered = filtered.filter(role => role.id !== 4);
-        //         }
-        //     }
-
-        //     return filtered;
-        // },
     },
     props: [
         'user',
         'roles',
         'userRoles',
-        'exist1',
-        'exist2',
-        // 'userHasOneOfMainRoles',
     ],
     methods: {
         submit() {

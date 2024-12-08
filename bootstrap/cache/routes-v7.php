@@ -96,26 +96,6 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.index',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
       '/admin/roles' => 
       array (
         0 => 
@@ -184,6 +164,26 @@ app('router')->setCompiledRoutes(
           2 => 
           array (
             'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
           ),
           3 => NULL,
           4 => false,
@@ -385,7 +385,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::OI8Qq3GoZioSrC64',
+            '_route' => 'generated::STFiNQvrMyFHNIVi',
           ),
           1 => NULL,
           2 => 
@@ -1057,45 +1057,6 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'admin.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-        ),
-        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:286:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:68:"function () {
-    return \\Inertia\\Inertia::render(\'Admin/home\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000009050000000000000000";}";s:4:"hash";s:44:"uBDa0OAZNxUVlpX5fTItRH5KN8vw/mrLjGc9zoPX0Io=";}}',
-        'as' => 'admin.index',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
     'admin.roles.index' => 
     array (
       'methods' => 
@@ -1346,6 +1307,46 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Admin\\LogController@changeLogStatus',
         'controller' => 'App\\Http\\Controllers\\Admin\\LogController@changeLogStatus',
         'as' => 'admin.log.changeLogStatus',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:294:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:76:"function () {
+        return \\Inertia\\Inertia::render(\'Admin/home\');
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000009070000000000000000";}";s:4:"hash";s:44:"9nVUOfpR7Gj6QMd4W9qFe7fT1d5j93eQxhkIC6V/p8M=";}}',
+        'as' => 'admin.index',
         'namespace' => NULL,
         'prefix' => 'admin',
         'where' => 
@@ -2139,7 +2140,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::OI8Qq3GoZioSrC64' => 
+    'generated::STFiNQvrMyFHNIVi' => 
     array (
       'methods' => 
       array (
@@ -2162,7 +2163,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::OI8Qq3GoZioSrC64',
+        'as' => 'generated::STFiNQvrMyFHNIVi',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2431,7 +2432,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'checkUserRole:user',
+          1 => 'checkUserRole:admin,user',
         ),
         'uses' => 'App\\Http\\Controllers\\Client\\MainController@index',
         'controller' => 'App\\Http\\Controllers\\Client\\MainController@index',
@@ -2468,7 +2469,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'checkUserRole:user',
+          1 => 'checkUserRole:admin,user',
         ),
         'uses' => 'App\\Http\\Controllers\\Client\\MainController@saveTrack',
         'controller' => 'App\\Http\\Controllers\\Client\\MainController@saveTrack',
@@ -2505,7 +2506,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'checkUserRole:user',
+          1 => 'checkUserRole:admin,user',
         ),
         'uses' => 'App\\Http\\Controllers\\Client\\MainController@deleteMyTrack',
         'controller' => 'App\\Http\\Controllers\\Client\\MainController@deleteMyTrack',
@@ -2542,7 +2543,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'checkUserRole:user',
+          1 => 'checkUserRole:admin,user',
         ),
         'uses' => 'App\\Http\\Controllers\\Client\\MainController@saveAlbum',
         'controller' => 'App\\Http\\Controllers\\Client\\MainController@saveAlbum',
@@ -2579,7 +2580,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'checkUserRole:user',
+          1 => 'checkUserRole:admin,user',
         ),
         'uses' => 'App\\Http\\Controllers\\Client\\MainController@deleteMyAlbum',
         'controller' => 'App\\Http\\Controllers\\Client\\MainController@deleteMyAlbum',

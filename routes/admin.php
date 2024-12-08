@@ -19,9 +19,6 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Admin/home');
-})->name('index');
 
 Route::middleware('checkUserRole:admin')->group(function () {
     Route::resource('roles', RoleController::class)->except(['show'])->names('roles');
@@ -29,6 +26,9 @@ Route::middleware('checkUserRole:admin')->group(function () {
 });
 
 Route::middleware('checkUserRole:admin,moderator')->group(function () {
+    Route::get('/', function () {
+        return Inertia::render('Admin/home');
+    })->name('index');
     Route::resource('user', UserController::class)->except(['show'])->names('users');
     Route::resource('logs', LogController::class)->only(['index'])->names('logs');
     Route::resource('musics', MusicController::class)->except(['show'])->names('musics');

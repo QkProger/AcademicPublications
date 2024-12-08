@@ -27,7 +27,7 @@
             <Link class="btn btn-danger mr-2" :href="route('main')">
             <i class="fa fa-trash"></i> Фильтрді тазалау
             </Link>
-            <Link class="btn btn-danger mr-2" :href="route('main')">
+            <Link class="btn btn-danger mr-2" :href="route('logout')">
             <i class="fas fa-sign-out-alt"></i>
             </Link>
         </div>

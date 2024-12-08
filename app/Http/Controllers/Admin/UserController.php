@@ -37,12 +37,8 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::get();
-        $exist1 = UserRole::where('role_id', 3)->exists() ? 1 : 0;
-        $exist2 = UserRole::where('role_id', 4)->exists() ? 1 : 0;
         return Inertia::render('Admin/User/Create', [
             'roles' => $roles,
-            'exist1' => $exist1,
-            'exist2' => $exist2,
         ]);
     }
 
@@ -82,25 +78,10 @@ class UserController extends Controller
             ->select('roles.id as id', 'roles.name')
             ->get();
         $roles = Role::get();
-        // $exist1 = UserRole::where('role_id', 3)
-        //     ->where('user_id', '<>', $user->id)
-        //     ->exists() ? 1 : 0;
-
-        // $exist2 = UserRole::where('role_id', 4)
-        //     ->where('user_id', '<>', $user->id)
-        //     ->exists() ? 1 : 0;
-        // $userHasOneOfMainRoles = $userRoles->contains(function ($role) {
-        //     return $role['id'] === 3 || $role['id'] === 4;
-        // }) ? 1 : 0;
-        $exist1 = UserRole::where('role_id', 3)->exists() ? 1 : 0;
-        $exist2 = UserRole::where('role_id', 4)->exists() ? 1 : 0;
         return Inertia::render('Admin/User/Edit', [
             'user' => $user,
             'roles' => $roles,
             'userRoles' => $userRoles,
-            'exist1' => $exist1,
-            'exist2' => $exist2,
-            // 'userHasOneOfMainRoles' => $userHasOneOfMainRoles,
         ]);
     }
 
