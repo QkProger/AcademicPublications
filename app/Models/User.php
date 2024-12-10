@@ -15,12 +15,4 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class, 'user_roles');
     }
-
-    public function myTracks() {
-        return $this->belongsToMany(Music::class, 'user_musics');
-    }
-
-    public function myAlbums() {
-        return $this->belongsToMany(Album::class, 'user_albums');
-    }
 }

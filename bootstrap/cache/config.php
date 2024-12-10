@@ -245,7 +245,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\OSPanel\\domains\\music\\storage\\framework/cache/data',
+        'path' => 'D:\\OSPanel\\domains\\AcademicPublications\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -328,7 +328,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'music',
+        'database' => 'AcademicPublications',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -338,7 +338,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'music',
+        'database' => 'AcademicPublications',
         'username' => 'root',
         'password' => 'root',
         'unix_socket' => '',
@@ -358,7 +358,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'music',
+        'database' => 'AcademicPublications',
         'username' => 'root',
         'password' => 'root',
         'charset' => 'utf8',
@@ -373,7 +373,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'music',
+        'database' => 'AcademicPublications',
         'username' => 'root',
         'password' => 'root',
         'charset' => 'utf8',
@@ -418,13 +418,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\OSPanel\\domains\\music\\storage\\app',
+        'root' => 'D:\\OSPanel\\domains\\AcademicPublications\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\OSPanel\\domains\\music\\public\\storage',
+        'root' => 'D:\\OSPanel\\domains\\AcademicPublications\\public\\storage',
         'url' => 'http://127.0.0.1/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -444,7 +444,7 @@
     ),
     'links' => 
     array (
-      'D:\\OSPanel\\domains\\music\\public\\storage' => 'D:\\OSPanel\\domains\\music\\storage\\app/public',
+      'D:\\OSPanel\\domains\\AcademicPublications\\public\\storage' => 'D:\\OSPanel\\domains\\AcademicPublications\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -520,13 +520,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'D:\\OSPanel\\domains\\music\\storage\\logs/laravel.log',
+        'path' => 'D:\\OSPanel\\domains\\AcademicPublications\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'D:\\OSPanel\\domains\\music\\storage\\logs/laravel.log',
+        'path' => 'D:\\OSPanel\\domains\\AcademicPublications\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -578,7 +578,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'D:\\OSPanel\\domains\\music\\storage\\logs/laravel.log',
+        'path' => 'D:\\OSPanel\\domains\\AcademicPublications\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -644,7 +644,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\OSPanel\\domains\\music\\resources\\views/vendor/mail',
+        0 => 'D:\\OSPanel\\domains\\AcademicPublications\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -750,7 +750,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\OSPanel\\domains\\music\\storage\\framework/sessions',
+    'files' => 'D:\\OSPanel\\domains\\AcademicPublications\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -770,9 +770,9 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\OSPanel\\domains\\music\\resources\\views',
+      0 => 'D:\\OSPanel\\domains\\AcademicPublications\\resources\\views',
     ),
-    'compiled' => 'D:\\OSPanel\\domains\\music\\storage\\framework\\views',
+    'compiled' => 'D:\\OSPanel\\domains\\AcademicPublications\\storage\\framework\\views',
   ),
   'inertia' => 
   array (
@@ -786,7 +786,7 @@
       'ensure_pages_exist' => true,
       'page_paths' => 
       array (
-        0 => 'D:\\OSPanel\\domains\\music\\resources\\js/Pages',
+        0 => 'D:\\OSPanel\\domains\\AcademicPublications\\resources\\js/Pages',
       ),
       'page_extensions' => 
       array (
@@ -872,7 +872,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'D:\\OSPanel\\domains\\music',
+    'remote_sites_path' => 'D:\\OSPanel\\domains\\AcademicPublications',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

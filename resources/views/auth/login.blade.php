@@ -7,11 +7,11 @@
                 <div class="card no-select">
                     <div class="card-header d-flex align-items-center justify-content-between bg-white">
                         <div id="kz-title" class="d-block w-100 text-center">
-                            <h2>Түлектер</h2>
+                            <h2>Басылымдар</h2>
                             <h6 class="fw-normal">Ахмет Ясауи университеті</h6>
                         </div>
                         <div id="tr-title" class="d-block w-100 text-center d-none">
-                            <h2>Graduations</h2>
+                            <h2>Publications</h2>
                             <h6 class="fw-normal">Ahmet Yesevi Üniversitesi</h6>
                         </div>
                         <div class="login__logo_block text-end ms-lg-3">
@@ -62,15 +62,6 @@
                                     <div class="d-flex gap-2">
                                         <input type="radio" id="kz-input" name="lang_code" value="kz" checked
                                             class="d-none">
-                                        <label for="kz-input">
-                                            <img id="kz-icon" src="{{ asset('images/kz_icon.png') }}"
-                                                class="lang_img active" width="30">
-                                        </label>
-                                        <input type="radio" id="tr-input" name="lang_code" value="tr" class="d-none">
-                                        <label for="tr-input">
-                                            <img id="tr-icon" src="{{ asset('images/tr_icon.png') }}" class="lang_img"
-                                                width="30">
-                                        </label>
                                     </div>
                                 </div>
                             </div>

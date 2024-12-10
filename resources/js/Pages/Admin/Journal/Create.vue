@@ -1,30 +1,30 @@
 <template>
 
     <head>
-        <title>Админ панель | Альбомды өңдеу</title>
+        <title>Админ панель | Журнал қосу</title>
     </head>
     <AdminLayout>
         <template #breadcrumbs>
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Альбомды өңдеу</h1>
+                    <h1 class="m-0">Журнал қосу</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a :href="route('admin.index')">
                                 <i class="fas fa-dashboard"></i>
-                                {{ userData.lang_code == 'kz' ? 'Басты бет' : 'Ana sayfa' }}
+                                Басты бет
                             </a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a :href="route('admin.albums.index')">
+                            <a :href="route('admin.journals.index')">
                                 <i class="fas fa-dashboard"></i>
-                                Альбомдар тізімі
+                                Журналдар тізімі
                             </a>
                         </li>
                         <li class="breadcrumb-item active">
-                            Альбомды өңдеу
+                            Журнал қосу
                         </li>
                     </ol>
                 </div>
@@ -36,15 +36,23 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="">Аты</label>
-                            <input type="text" class="form-control" v-model="album.title" name="title" />
+                            <input type="text" class="form-control" v-model="journal.name" name="name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Импакт-фактор</label>
+                            <input type="text" class="form-control" v-model="journal.impact_factor" name="impact_factor" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">issn</label>
+                            <input type="text" class="form-control" v-model="journal.issn" name="issn" />
                         </div>
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary mr-1">
-                            {{ userData.lang_code == 'kz' ? 'Сақтау' : 'Kaydet' }}
+                            Сақтау
                         </button>
                         <button type="button" class="btn btn-danger" @click.prevent="back()">
-                            {{ userData.lang_code == 'kz' ? 'Артқа' : 'Dönüş' }}
+                            Артқа
                         </button>
                     </div>
                 </form>
@@ -66,9 +74,13 @@ export default {
         ValidationError,
         Head
     },
-    props: [
-        'album',
-    ],
+    data() {
+        return {
+            journal: {
+                
+            }
+        }
+    },
     created() {
         this.$store.dispatch('fetchUser');
     },
@@ -79,12 +91,13 @@ export default {
     },
     methods: {
         submit() {
-            this.album["_method"] = "put";
             this.$inertia.post(
-                route("admin.albums.update", this.album.id),
-                this.album,
+                route("admin.journals.store"),
+                this.journal,
                 {
-                    FormData:true,
+                    onError: () => console.log("An error has occurred"),
+                    onSuccess: () =>
+                        console.log("The new contact has been saved"),
                 }
             );
         },

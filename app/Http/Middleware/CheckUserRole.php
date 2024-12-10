@@ -12,8 +12,7 @@ class CheckUserRole
     {
         // Проверяем, есть ли авторизованный пользователь
         if (!auth()->check()) {
-            // return redirect()->route('adminLoginShow');
-            return redirect()->route('register');
+            return redirect()->route('login');
         }
 
         // Получаем роли текущего пользователя
@@ -27,6 +26,6 @@ class CheckUserRole
         }
 
         // Если пользователь не имеет необходимой роли, перенаправляем на ошибку или другую страницу
-        return redirect('/')->with('error', 'Сізде бұл ресурсқа құқық жоқ.');
+        return redirect('/admin')->with('error', 'Сізде бұл ресурсқа құқық жоқ.');
     }
 }

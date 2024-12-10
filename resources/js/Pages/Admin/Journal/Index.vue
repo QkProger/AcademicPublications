@@ -1,13 +1,12 @@
 <template>
-
     <head>
-        <title v-if="userData.lang_code == 'kz'">Админ панель | Музыка</title>
+        <title>Админ панель | Журналдар</title>
     </head>
     <AdminLayout>
         <template #breadcrumbs>
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0" v-if="userData.lang_code == 'kz'">Музыкалар тізімі</h1>
+                    <h1 class="m-0">Журналдар тізімі</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -17,8 +16,8 @@
                                 {{ userData.lang_code == 'kz' ? 'Басты бет' : 'Ana sayfa' }}
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" v-if="userData.lang_code == 'kz'">
-                            Музыкалар тізімі
+                        <li class="breadcrumb-item active">
+                            Журналдар тізімі
                         </li>
                     </ol>
                 </div>
@@ -26,9 +25,8 @@
         </template>
         <template #header>
             <div class="buttons d-flex align-items-center">
-                <Link class="btn btn-primary mr-2" :href="route('admin.musics.create')"
-                    v-if="userData.lang_code == 'kz'">
-                <i class="fa fa-plus"></i> Қосу
+                <Link class="btn btn-primary mr-2" :href="route('admin.journals.create')">
+                    <i class="fa fa-plus"></i> Қосу
                 </Link>
             </div>
         </template>
@@ -39,39 +37,28 @@
                         <div class="col-sm-12">
                             <table class="table table-hover table-bordered table-striped dataTable dtr-inline">
                                 <thead>
-                                    <tr music="row">
+                                    <tr>
                                         <th>ID</th>
-                                        <th>Аты</th>
-                                        <th>Орындаушы</th>
-                                        <th>Альбомы</th>
-                                        <th>Жанры</th>
+                                        <th>Атауы</th>
+                                        <th>Impact Factor</th>
+                                        <th>ISSN</th>
                                         <th>Өңдеу/Жою</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd" v-for="(music, index) in musics.data" :key="'music' + music.id">
-                                        <td>
-                                            {{
-                                                music.id
-                                            }}
-                                        </td>
-                                        <td>{{ music.title }}</td>
-                                        <td>{{ music.artist }}</td>
-                                        <td>{{ music.album ? music.album.title : '-' }}</td>
-                                        <td>{{ music.genre }}</td>
-                                        <td><audio :src="'/storage/' + music.file_path" controls></audio></td>
+                                    <tr v-for="journal in journals.data" :key="'journal' + journal.id">
+                                        <td>{{ journal.id }}</td>
+                                        <td>{{ journal.name }}</td>
+                                        <td>{{ journal.impact_factor }}</td>
+                                        <td>{{ journal.issn }}</td>
                                         <td>
                                             <div class="btn-group btn-group-sm">
-                                                <Link :href="route('admin.musics.edit', music)" class="btn btn-primary"
-                                                    title="Изменить">
-                                                <i class="fas fa-edit"></i>
+                                                <Link :href="route('admin.journals.edit', journal)" class="btn btn-primary" title="Изменить">
+                                                    <i class="fas fa-edit"></i>
                                                 </Link>
-
-                                                <button @click.prevent="deleteData(music.id)" class="btn btn-danger"
-                                                    title="Удалить">
+                                                <button @click.prevent="deleteData(journal.id)" class="btn btn-danger" title="Удалить">
                                                     <i class="fas fa-times"></i>
                                                 </button>
-
                                             </div>
                                         </td>
                                     </tr>
@@ -79,16 +66,18 @@
                             </table>
                         </div>
                     </div>
-                    <Pagination :links="musics.links" />
+                    <Pagination :links="journals.links" />
                 </div>
             </div>
         </div>
     </AdminLayout>
 </template>
+
 <script>
 import AdminLayout from "../../../Layouts/AdminLayout.vue";
 import { Link, Head } from "@inertiajs/inertia-vue3";
 import Pagination from "../../../Components/Pagination.vue";
+
 export default {
     components: {
         AdminLayout,
@@ -96,18 +85,7 @@ export default {
         Pagination,
         Head
     },
-    props: ["musics"],
-    data() {
-        return {
-            filter: {
-                name: route().params.name ? route().params.name : null,
-            },
-            loading: 0,
-        };
-    },
-    created() {
-        this.$store.dispatch('fetchUser');
-    },
+    props: ["journals"],
     computed: {
         userData() {
             return this.$store.getters.getUserData.user;
@@ -126,15 +104,10 @@ export default {
                 cancelButtonText: this.userData.lang_code == 'kz' ? "Жоқ" : "Hayır",
             }).then((result) => {
                 if (result.isConfirmed) {
-                    this.$inertia.delete(route('admin.musics.destroy', id))
+                    this.$inertia.delete(route('admin.journals.destroy', id));
                 }
             });
-        },
-        search() {
-            this.loading = 1
-            const params = this.clearParams(this.filter);
-            this.$inertia.get(route('admin.musics.index'), params)
-        },
+        }
     }
 };
 </script>

@@ -26,30 +26,13 @@ use Inertia\Inertia;
 
 
 Route::middleware('auth')->group(function () {
+    Route::get('/', [MainController::class, 'index'])->name('main');
 });
 
 
 Route::middleware('guest')->group(function () {
-    Route::view('/register', 'auth.register')->name('register');
     Route::view('/login', 'auth.login')->name('adminLoginShow');
     Route::post('/login', [AdminAuthController::class, 'adminLoginForm'])->name('adminLoginForm');
-    Route::post('/register', [AdminAuthController::class, 'register'])->name('registerPost');
 });
-// Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('/logout', [AdminAuthController::class, 'logout'])->name('logout');
 Route::get('/user', [AdminAuthController::class, 'getUser'])->name('user');
-
-// Route::post('/saveTrack', [MainController::class, 'saveTrack'])->name('saveTrack');
-// Route::post('/deleteMyTrack', [MainController::class, 'deleteMyTrack'])->name('deleteMyTrack');
-// Route::post('/saveAlbum', [MainController::class, 'saveAlbum'])->name('saveAlbum');
-// Route::post('/deleteMyAlbum', [MainController::class, 'deleteMyAlbum'])->name('deleteMyAlbum');
-
-
-Route::middleware('checkUserRole:admin,user')->group(function () {
-    Route::get('/', [MainController::class, 'index'])->name('main');
-    Route::post('/saveTrack', [MainController::class, 'saveTrack'])->name('saveTrack');
-    Route::post('/deleteMyTrack', [MainController::class, 'deleteMyTrack'])->name('deleteMyTrack');
-    Route::post('/saveAlbum', [MainController::class, 'saveAlbum'])->name('saveAlbum');
-    Route::post('/deleteMyAlbum', [MainController::class, 'deleteMyAlbum'])->name('deleteMyAlbum');
-
-});

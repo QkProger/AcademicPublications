@@ -1,13 +1,13 @@
 <template>
 
     <head>
-        <title>Админ панель | Альбом қосу</title>
+        <title>Админ панель | Автор қосу</title>
     </head>
     <AdminLayout>
         <template #breadcrumbs>
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Альбом қосу</h1>
+                    <h1 class="m-0">Автор қосу</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -18,13 +18,13 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a :href="route('admin.albums.index')">
+                            <a :href="route('admin.authors.index')">
                                 <i class="fas fa-dashboard"></i>
-                                Альбомдар тізімі
+                                Авторлар тізімі
                             </a>
                         </li>
                         <li class="breadcrumb-item active">
-                            Альбом қосу
+                            Автор қосу
                         </li>
                     </ol>
                 </div>
@@ -36,7 +36,19 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="">Аты</label>
-                            <input type="text" class="form-control" v-model="album.title" name="title" />
+                            <input type="text" class="form-control" v-model="author.full_name" name="full_name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Лауазымы</label>
+                            <input type="text" class="form-control" v-model="author.position" name="position" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Дәрежесі</label>
+                            <input type="text" class="form-control" v-model="author.degree" name="degree" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Orcid</label>
+                            <input type="text" class="form-control" v-model="author.orcid" name="orcid" />
                         </div>
                     </div>
                     <div class="card-footer">
@@ -68,7 +80,7 @@ export default {
     },
     data() {
         return {
-            album: {
+            author: {
                 
             }
         }
@@ -84,8 +96,8 @@ export default {
     methods: {
         submit() {
             this.$inertia.post(
-                route("admin.albums.store"),
-                this.album,
+                route("admin.authors.store"),
+                this.author,
                 {
                     onError: () => console.log("An error has occurred"),
                     onSuccess: () =>

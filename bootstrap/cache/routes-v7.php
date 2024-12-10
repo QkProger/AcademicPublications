@@ -96,6 +96,26 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin/roles' => 
       array (
         0 => 
@@ -164,26 +184,6 @@ app('router')->setCompiledRoutes(
           2 => 
           array (
             'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.index',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
           ),
           3 => NULL,
           4 => false,
@@ -267,13 +267,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/musics' => 
+      '/admin/authors' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.musics.index',
+            '_route' => 'admin.authors.index',
           ),
           1 => NULL,
           2 => 
@@ -290,7 +290,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'admin.musics.store',
+            '_route' => 'admin.authors.store',
           ),
           1 => NULL,
           2 => 
@@ -303,13 +303,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/musics/create' => 
+      '/admin/authors/create' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.musics.create',
+            '_route' => 'admin.authors.create',
           ),
           1 => NULL,
           2 => 
@@ -323,13 +323,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/albums' => 
+      '/admin/journals' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.albums.index',
+            '_route' => 'admin.journals.index',
           ),
           1 => NULL,
           2 => 
@@ -346,7 +346,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'admin.albums.store',
+            '_route' => 'admin.journals.store',
           ),
           1 => NULL,
           2 => 
@@ -359,13 +359,69 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/albums/create' => 
+      '/admin/journals/create' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.albums.create',
+            '_route' => 'admin.journals.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/publications' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.publications.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.publications.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/publications/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.publications.create',
           ),
           1 => NULL,
           2 => 
@@ -385,7 +441,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::STFiNQvrMyFHNIVi',
+            '_route' => 'generated::JxTl6iaw0hEYpFgw',
           ),
           1 => NULL,
           2 => 
@@ -399,35 +455,19 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/register' => 
+      '/' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'register',
+            '_route' => 'main',
           ),
           1 => NULL,
           2 => 
           array (
             'GET' => 0,
             'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'registerPost',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -511,106 +551,10 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'main',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/saveTrack' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'saveTrack',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/deleteMyTrack' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'deleteMyTrack',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/saveAlbum' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'saveAlbum',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/deleteMyAlbum' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'deleteMyAlbum',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|roles/([^/]++)(?|/edit(*:39)|(*:46))|user/(?|([^/]++)(?|/edit(*:78)|(*:85))|changeLangCode/([^/]++)(*:116))|musics/([^/]++)(?|/edit(*:148)|(*:156))|albums/([^/]++)(?|/edit(*:188)|(*:196))))/?$}sDu',
+      0 => '{^(?|/admin/(?|roles/([^/]++)(?|/edit(*:39)|(*:46))|user/(?|([^/]++)(?|/edit(*:78)|(*:85))|changeLangCode/([^/]++)(*:116))|authors/([^/]++)(?|/edit(*:149)|(*:157))|journals/([^/]++)(?|/edit(*:191)|(*:199))|publications/([^/]++)(?|/edit(*:237)|(*:245))))/?$}sDu',
     ),
     3 => 
     array (
@@ -766,17 +710,17 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      148 => 
+      149 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.musics.edit',
+            '_route' => 'admin.authors.edit',
           ),
           1 => 
           array (
-            0 => 'music',
+            0 => 'author',
           ),
           2 => 
           array (
@@ -789,17 +733,17 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      156 => 
+      157 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.musics.update',
+            '_route' => 'admin.authors.update',
           ),
           1 => 
           array (
-            0 => 'music',
+            0 => 'author',
           ),
           2 => 
           array (
@@ -815,11 +759,11 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'admin.musics.destroy',
+            '_route' => 'admin.authors.destroy',
           ),
           1 => 
           array (
-            0 => 'music',
+            0 => 'author',
           ),
           2 => 
           array (
@@ -831,17 +775,17 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      188 => 
+      191 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.albums.edit',
+            '_route' => 'admin.journals.edit',
           ),
           1 => 
           array (
-            0 => 'album',
+            0 => 'journal',
           ),
           2 => 
           array (
@@ -854,17 +798,17 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      196 => 
+      199 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.albums.update',
+            '_route' => 'admin.journals.update',
           ),
           1 => 
           array (
-            0 => 'album',
+            0 => 'journal',
           ),
           2 => 
           array (
@@ -880,11 +824,76 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'admin.albums.destroy',
+            '_route' => 'admin.journals.destroy',
           ),
           1 => 
           array (
-            0 => 'album',
+            0 => 'journal',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      237 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.publications.edit',
+          ),
+          1 => 
+          array (
+            0 => 'publication',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      245 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.publications.update',
+          ),
+          1 => 
+          array (
+            0 => 'publication',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.publications.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'publication',
           ),
           2 => 
           array (
@@ -1039,6 +1048,45 @@ app('router')->setCompiledRoutes(
         'as' => 'ignition.updateConfig',
         'namespace' => NULL,
         'prefix' => '_ignition',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+        ),
+        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:286:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:68:"function () {
+    return \\Inertia\\Inertia::render(\'Admin/home\');
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000009050000000000000000";}";s:4:"hash";s:44:"uBDa0OAZNxUVlpX5fTItRH5KN8vw/mrLjGc9zoPX0Io=";}}',
+        'as' => 'admin.index',
+        'namespace' => NULL,
+        'prefix' => 'admin',
         'where' => 
         array (
         ),
@@ -1307,46 +1355,6 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Admin\\LogController@changeLogStatus',
         'controller' => 'App\\Http\\Controllers\\Admin\\LogController@changeLogStatus',
         'as' => 'admin.log.changeLogStatus',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:294:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:76:"function () {
-        return \\Inertia\\Inertia::render(\'Admin/home\');
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000009070000000000000000";}";s:4:"hash";s:44:"9nVUOfpR7Gj6QMd4W9qFe7fT1d5j93eQxhkIC6V/p8M=";}}',
-        'as' => 'admin.index',
         'namespace' => NULL,
         'prefix' => 'admin',
         'where' => 
@@ -1638,470 +1646,6 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'admin.musics.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/musics',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.musics.index',
-        'uses' => 'App\\Http\\Controllers\\Admin\\MusicController@index',
-        'controller' => 'App\\Http\\Controllers\\Admin\\MusicController@index',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.musics.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/musics/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.musics.create',
-        'uses' => 'App\\Http\\Controllers\\Admin\\MusicController@create',
-        'controller' => 'App\\Http\\Controllers\\Admin\\MusicController@create',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.musics.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/musics',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.musics.store',
-        'uses' => 'App\\Http\\Controllers\\Admin\\MusicController@store',
-        'controller' => 'App\\Http\\Controllers\\Admin\\MusicController@store',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.musics.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/musics/{music}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.musics.edit',
-        'uses' => 'App\\Http\\Controllers\\Admin\\MusicController@edit',
-        'controller' => 'App\\Http\\Controllers\\Admin\\MusicController@edit',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.musics.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'admin/musics/{music}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.musics.update',
-        'uses' => 'App\\Http\\Controllers\\Admin\\MusicController@update',
-        'controller' => 'App\\Http\\Controllers\\Admin\\MusicController@update',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.musics.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'admin/musics/{music}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.musics.destroy',
-        'uses' => 'App\\Http\\Controllers\\Admin\\MusicController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Admin\\MusicController@destroy',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.albums.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/albums',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.albums.index',
-        'uses' => 'App\\Http\\Controllers\\Admin\\AlbumController@index',
-        'controller' => 'App\\Http\\Controllers\\Admin\\AlbumController@index',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.albums.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/albums/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.albums.create',
-        'uses' => 'App\\Http\\Controllers\\Admin\\AlbumController@create',
-        'controller' => 'App\\Http\\Controllers\\Admin\\AlbumController@create',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.albums.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/albums',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.albums.store',
-        'uses' => 'App\\Http\\Controllers\\Admin\\AlbumController@store',
-        'controller' => 'App\\Http\\Controllers\\Admin\\AlbumController@store',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.albums.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/albums/{album}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.albums.edit',
-        'uses' => 'App\\Http\\Controllers\\Admin\\AlbumController@edit',
-        'controller' => 'App\\Http\\Controllers\\Admin\\AlbumController@edit',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.albums.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'admin/albums/{album}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.albums.update',
-        'uses' => 'App\\Http\\Controllers\\Admin\\AlbumController@update',
-        'controller' => 'App\\Http\\Controllers\\Admin\\AlbumController@update',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.albums.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'admin/albums/{album}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'miniAdmin',
-          2 => 'checkUserRole:admin,moderator',
-        ),
-        'as' => 'admin.albums.destroy',
-        'uses' => 'App\\Http\\Controllers\\Admin\\AlbumController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Admin\\AlbumController@destroy',
-        'namespace' => NULL,
-        'prefix' => 'admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
     'admin.users.changeLangCode' => 
     array (
       'methods' => 
@@ -2140,7 +1684,703 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::STFiNQvrMyFHNIVi' => 
+    'admin.authors.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/authors',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.authors.index',
+        'uses' => 'App\\Http\\Controllers\\Admin\\AuthorController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AuthorController@index',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.authors.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/authors/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.authors.create',
+        'uses' => 'App\\Http\\Controllers\\Admin\\AuthorController@create',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AuthorController@create',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.authors.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/authors',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.authors.store',
+        'uses' => 'App\\Http\\Controllers\\Admin\\AuthorController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AuthorController@store',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.authors.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/authors/{author}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.authors.edit',
+        'uses' => 'App\\Http\\Controllers\\Admin\\AuthorController@edit',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AuthorController@edit',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.authors.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/authors/{author}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.authors.update',
+        'uses' => 'App\\Http\\Controllers\\Admin\\AuthorController@update',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AuthorController@update',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.authors.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/authors/{author}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.authors.destroy',
+        'uses' => 'App\\Http\\Controllers\\Admin\\AuthorController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AuthorController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.journals.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/journals',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.journals.index',
+        'uses' => 'App\\Http\\Controllers\\Admin\\JournalController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\JournalController@index',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.journals.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/journals/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.journals.create',
+        'uses' => 'App\\Http\\Controllers\\Admin\\JournalController@create',
+        'controller' => 'App\\Http\\Controllers\\Admin\\JournalController@create',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.journals.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/journals',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.journals.store',
+        'uses' => 'App\\Http\\Controllers\\Admin\\JournalController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\JournalController@store',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.journals.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/journals/{journal}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.journals.edit',
+        'uses' => 'App\\Http\\Controllers\\Admin\\JournalController@edit',
+        'controller' => 'App\\Http\\Controllers\\Admin\\JournalController@edit',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.journals.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/journals/{journal}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.journals.update',
+        'uses' => 'App\\Http\\Controllers\\Admin\\JournalController@update',
+        'controller' => 'App\\Http\\Controllers\\Admin\\JournalController@update',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.journals.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/journals/{journal}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.journals.destroy',
+        'uses' => 'App\\Http\\Controllers\\Admin\\JournalController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\JournalController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.publications.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/publications',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.publications.index',
+        'uses' => 'App\\Http\\Controllers\\Admin\\PublicationController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\PublicationController@index',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.publications.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/publications/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.publications.create',
+        'uses' => 'App\\Http\\Controllers\\Admin\\PublicationController@create',
+        'controller' => 'App\\Http\\Controllers\\Admin\\PublicationController@create',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.publications.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/publications',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.publications.store',
+        'uses' => 'App\\Http\\Controllers\\Admin\\PublicationController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\PublicationController@store',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.publications.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/publications/{publication}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.publications.edit',
+        'uses' => 'App\\Http\\Controllers\\Admin\\PublicationController@edit',
+        'controller' => 'App\\Http\\Controllers\\Admin\\PublicationController@edit',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.publications.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/publications/{publication}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.publications.update',
+        'uses' => 'App\\Http\\Controllers\\Admin\\PublicationController@update',
+        'controller' => 'App\\Http\\Controllers\\Admin\\PublicationController@update',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.publications.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/publications/{publication}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'miniAdmin',
+          2 => 'checkUserRole:admin,moderator',
+        ),
+        'as' => 'admin.publications.destroy',
+        'uses' => 'App\\Http\\Controllers\\Admin\\PublicationController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\PublicationController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::JxTl6iaw0hEYpFgw' => 
     array (
       'methods' => 
       array (
@@ -2157,13 +2397,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:297:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:79:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000009120000000000000000";}";s:4:"hash";s:44:"FySZMN6wZ0Bjh4PHvjE3D2lPx2uVGDjeZDDbCnEbqoI=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000090b0000000000000000";}";s:4:"hash";s:44:"65O7SlK5ynGJq7q+QHljEyh916aFdDaB1QoLrmTtecM=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::STFiNQvrMyFHNIVi',
+        'as' => 'generated::JxTl6iaw0hEYpFgw',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2179,41 +2419,33 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'register' => 
+    'main' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'register',
+      'uri' => '/',
       'action' => 
       array (
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'guest',
+          1 => 'auth',
         ),
-        'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
-        'controller' => '\\Illuminate\\Routing\\ViewController',
+        'uses' => 'App\\Http\\Controllers\\Client\\MainController@index',
+        'controller' => 'App\\Http\\Controllers\\Client\\MainController@index',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'register',
+        'as' => 'main',
       ),
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'auth.register',
-        'data' => 
-        array (
-        ),
-        'status' => 200,
-        'headers' => 
-        array (
-        ),
       ),
       'wheres' => 
       array (
@@ -2308,43 +2540,6 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'registerPost' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'register',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'guest',
-        ),
-        'uses' => 'App\\Http\\Controllers\\AdminAuthController@register',
-        'controller' => 'App\\Http\\Controllers\\AdminAuthController@register',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'registerPost',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
     'logout' => 
     array (
       'methods' => 
@@ -2404,192 +2599,6 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'user',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'main' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => '/',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'checkUserRole:admin,user',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Client\\MainController@index',
-        'controller' => 'App\\Http\\Controllers\\Client\\MainController@index',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'main',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'saveTrack' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'saveTrack',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'checkUserRole:admin,user',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Client\\MainController@saveTrack',
-        'controller' => 'App\\Http\\Controllers\\Client\\MainController@saveTrack',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'saveTrack',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'deleteMyTrack' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'deleteMyTrack',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'checkUserRole:admin,user',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Client\\MainController@deleteMyTrack',
-        'controller' => 'App\\Http\\Controllers\\Client\\MainController@deleteMyTrack',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'deleteMyTrack',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'saveAlbum' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'saveAlbum',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'checkUserRole:admin,user',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Client\\MainController@saveAlbum',
-        'controller' => 'App\\Http\\Controllers\\Client\\MainController@saveAlbum',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'saveAlbum',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'deleteMyAlbum' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'deleteMyAlbum',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'checkUserRole:admin,user',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Client\\MainController@deleteMyAlbum',
-        'controller' => 'App\\Http\\Controllers\\Client\\MainController@deleteMyAlbum',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'deleteMyAlbum',
       ),
       'fallback' => false,
       'defaults' => 

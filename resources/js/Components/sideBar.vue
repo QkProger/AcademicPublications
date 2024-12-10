@@ -6,8 +6,7 @@
             <img src="../../../public/adminlte/dist/img/AYU_Logo_EN.png" alt="AdminLTE Logo"
                 class="brand-image img-circle elevation-3" style="opacity: .8">
             <div>
-                <span class="brand-text font-weight-light fontSize" v-if="userData.user.lang_code == 'kz'">Graduations</span>
-                <span class="brand-text font-weight-light fontSize" v-else>Graduations</span>
+                <span class="brand-text font-weight-light fontSize">Басылымдар</span>
             </div>
         </a>
 
@@ -80,8 +79,7 @@
                     <li class="nav-item">
                         <a class="nav-link" :href="route('logout')">
                             <i class="nav-icon fas fa-sign-out-alt"></i>
-                            <p v-if="userData.user.lang_code == 'kz'">Шығу</p>
-                            <p v-else>Çıkış</p>
+                            <p>Шығу</p>
                         </a>
                     </li>
                 </ul>
@@ -139,25 +137,25 @@ export default {
                     menu_active: ["admin.users"],
                     role: this.allRoles,
                 },
-                // {
-                //     name: this.userData.user.lang_code == 'kz' ? "Логтар" : "Loglar",
-                //     font: "fa-solid fa-list",
-                //     route_name: "admin.logs.index",
-                //     menu_active: ["admin.logs"],
-                //     role: this.allRoles,
-                // },
                 {
-                    name: this.userData.user.lang_code == 'kz' ? "Музыкалар" : "Musics",
+                    name: this.userData.user.lang_code == 'kz' ? "Авторлар" : "Personel",
                     font: "fa-cogs",
-                    route_name: "admin.musics.index",
-                    menu_active: ["admin.musics"],
+                    route_name: "admin.authors.index",
+                    menu_active: ["admin.authors"],
                     role: this.allRoles,
                 },
                 {
-                    name: this.userData.user.lang_code == 'kz' ? "Альбомдар" : "Albums",
+                    name: this.userData.user.lang_code == 'kz' ? "Журналдар" : "Personel",
                     font: "fa-cogs",
-                    route_name: "admin.albums.index",
-                    menu_active: ["admin.albums"],
+                    route_name: "admin.journals.index",
+                    menu_active: ["admin.journals"],
+                    role: this.allRoles,
+                },
+                {
+                    name: this.userData.user.lang_code == 'kz' ? "Публикациялар" : "Personel",
+                    font: "fa-cogs",
+                    route_name: "admin.publications.index",
+                    menu_active: ["admin.publications"],
                     role: this.allRoles,
                 },
             ];

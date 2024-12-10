@@ -1,13 +1,13 @@
 <template>
 
     <head>
-        <title>Админ панель | Музыканы өңдеу</title>
+        <title>Админ панель | Авторды өңдеу</title>
     </head>
     <AdminLayout>
         <template #breadcrumbs>
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Музыканы өңдеу</h1>
+                    <h1 class="m-0">Авторды өңдеу</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -18,13 +18,13 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a :href="route('admin.musics.index')">
+                            <a :href="route('admin.authors.index')">
                                 <i class="fas fa-dashboard"></i>
-                                Музыкалар тізімі
+                                Авторлар тізімі
                             </a>
                         </li>
                         <li class="breadcrumb-item active">
-                            Музыканы өңдеу
+                            Авторды өңдеу
                         </li>
                     </ol>
                 </div>
@@ -36,28 +36,19 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="">Аты</label>
-                            <input type="text" class="form-control" v-model="music.title" name="title" />
+                            <input type="text" class="form-control" v-model="author.full_name" name="full_name" />
                         </div>
                         <div class="form-group">
-                            <label for="">Орындаушы</label>
-                            <input type="text" class="form-control" v-model="music.artist" name="artist" />
+                            <label for="">Лауазымы</label>
+                            <input type="text" class="form-control" v-model="author.position" name="position" />
                         </div>
                         <div class="form-group">
-                            <label for="">Альбомы</label>
-                            <select class="form-control"  v-model="music.album_id">
-                                <option v-for="album in albums"
-                                    :value="album.id">
-                                    {{ album.title }}
-                                </option>
-                            </select>
+                            <label for="">Дәрежесі</label>
+                            <input type="text" class="form-control" v-model="author.degree" name="degree" />
                         </div>
                         <div class="form-group">
-                            <label for="">Жанры</label>
-                            <input type="text" class="form-control" v-model="music.genre" name="genre" />
-                        </div>
-                        <div class="form-group">
-                            <label for="">Файлы</label>
-                            <input type="file" class="form-control" @change="handleFileChange" name="file" />
+                            <label for="">Orcid</label>
+                            <input type="text" class="form-control" v-model="author.orcid" name="orcid" />
                         </div>
                     </div>
                     <div class="card-footer">
@@ -88,8 +79,7 @@ export default {
         Head
     },
     props: [
-        'music',
-        'albums'
+        'author',
     ],
     created() {
         this.$store.dispatch('fetchUser');
@@ -100,15 +90,11 @@ export default {
         }
     },
     methods: {
-        handleFileChange(event) {
-            const file = event.target.files[0];
-            this.music.file = file;
-        },
         submit() {
-            this.music["_method"] = "put";
+            this.author["_method"] = "put";
             this.$inertia.post(
-                route("admin.musics.update", this.music.id),
-                this.music,
+                route("admin.authors.update", this.author.id),
+                this.author,
                 {
                     FormData:true,
                 }
